@@ -1,0 +1,73 @@
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/bin/Debug/netcoreapp2.2/RNAFoldingSim.deps.json
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/bin/Debug/netcoreapp2.2/RNAFoldingSim.runtimeconfig.json
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/bin/Debug/netcoreapp2.2/RNAFoldingSim.runtimeconfig.dev.json
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/bin/Debug/netcoreapp2.2/RNAFoldingSim.dll
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/bin/Debug/netcoreapp2.2/RNAFoldingSim.pdb
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/bin/Debug/netcoreapp2.2/RNAFoldingSim.Views.dll
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/bin/Debug/netcoreapp2.2/RNAFoldingSim.Views.pdb
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.csprojAssemblyReference.cache
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.csproj.CoreCompileInputs.cache
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.RazorAssemblyInfo.cache
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.RazorAssemblyInfo.cs
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.AssemblyInfoInputs.cache
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.AssemblyInfo.cs
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.TagHelpers.input.cache
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.TagHelpers.output.cache
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.RazorCoreGenerate.cache
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/Razor/Views/Home/Index.g.cshtml.cs
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.RazorTargetAssemblyInfo.cache
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.RazorTargetAssemblyInfo.cs
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.Views.pdb
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.dll
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.pdb
+/home/jprzybyl/Documents/src/RNA-Folding-Sim/RNAFoldingSim/obj/Debug/netcoreapp2.2/RNAFoldingSim.csproj.CopyComplete
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.deps.json
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.runtimeconfig.json
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.runtimeconfig.dev.json
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.dll
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.pdb
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.Views.dll
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.Views.pdb
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.csprojAssemblyReference.cache
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.csproj.CoreCompileInputs.cache
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.RazorAssemblyInfo.cache
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.RazorAssemblyInfo.cs
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.AssemblyInfoInputs.cache
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.AssemblyInfo.cs
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.TagHelpers.input.cache
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.TagHelpers.output.cache
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.RazorCoreGenerate.cache
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.RazorTargetAssemblyInfo.cache
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.RazorTargetAssemblyInfo.cs
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.Views.pdb
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.dll
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.pdb
+C:\Users\hairy\Desktop\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.csproj.CopyComplete
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.deps.json
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.runtimeconfig.json
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.runtimeconfig.dev.json
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.dll
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.pdb
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.Views.dll
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\bin\Debug\netcoreapp2.2\RNAFoldingSim.Views.pdb
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.csprojAssemblyReference.cache
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.AssemblyInfoInputs.cache
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.AssemblyInfo.cs
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.csproj.CoreCompileInputs.cache
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.RazorAssemblyInfo.cache
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.RazorAssemblyInfo.cs
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.TagHelpers.input.cache
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.TagHelpers.output.cache
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.RazorCoreGenerate.cache
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.RazorTargetAssemblyInfo.cache
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.RazorTargetAssemblyInfo.cs
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.Views.pdb
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.dll
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.pdb
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.genruntimeconfig.cache
+C:\Users\colin\source\RNA_FOLDING_SIM\RNA-Folding-Sim V1.3\RNA-Folding-Sim\RNAFoldingSim\obj\Debug\netcoreapp2.2\RNAFoldingSim.csproj.CopyComplete

@@ -1,0 +1,443 @@
+<html>
+<head>
+  <style>
+    body { text-align: center; }
+  </style>
+</head>
+<body>
+
+<h1>RNA Folding Simulator</h1>
+
+<p1>
+	<!-- If anyone finds a better spot for this feel free to move it -->
+	Speed:<input id="TickInterval" type="text" value="1" size="2">
+	<input type="file" id="fileinput">
+	<button onclick="ReadSingleFile()">Read File</button>
+	<br>
+	<select name="strings" id="list" style="width: 400px;">
+		<option value="string0"></option>
+ 		<option value="string1">AUAGAUGCUAGCA</option>
+		<option value="string2">UUAGCUACGGACCCG</option>
+		<option value="string3">CGACCGGAAUGCAUCGU</option>
+		<option value="string4">AUCGAUCGUAAAUCGUU</option>
+	</select>
+	<button onclick="DropDownDraw()">Run Project</button>
+	<br>
+	RNAString:<input id="RNAString" type="text" value="" size="60">
+	<button onclick="TextBoxDraw()">Run Project</button>
+	<br>
+</p1>
+
+<p2>
+	<br><canvas id="RNACanvas" width="700" height="550" style=" border:1px solid #000000;">
+	</canvas>
+	</br>
+</p2>
+<p3>
+	<img src="/Legend.png" alt="Legend"/>
+</p3>
+<script>
+/*
+ * The large drawing canvas
+ */
+var canvas = document.getElementById("RNACanvas");
+const context = canvas.getContext('2d');
+var currentFrame = 0;
+var resetFrame = 0;
+var dashLength = 3;
+var dashSpace = 3;
+//The lower the number the quicker an animation happens, helps with smoothness
+var tickInterval = 10;
+//Smootheness, the higher the number the smoother it is
+var maxResetFrame = 30;
+var speed = 1;
+//Scale of the view
+//var scale = 550;
+var scale = 1;
+var animObj;
+
+function ReadSingleFile()
+{
+	//Get the info from the file
+	var t = document.getElementById('fileinput');
+	var file = t.files[0];
+
+	if(file)
+	{
+		var fr = new FileReader();
+		fr.onload = function(e)
+		{
+			var contents = e.target.result;
+			Draw(contents);
+		}
+		fr.readAsText(file);
+	}
+}
+
+// 27 nodes can fit lengthwise on the canvas
+/*
+ * TextBoxDraw draws the bases entered from the textbox where the user can enter their own RNA string
+ */ 
+function TextBoxDraw()
+{
+  var baseString = document.getElementById("RNAString").value;
+  Draw(baseString);
+}
+/*
+ * DropDownDraw draws the bases in one of the predetermined arrays in the drop-down list
+ */
+function DropDownDraw()
+{
+	var e = document.getElementById("list");
+	var r = e.options[e.selectedIndex].text;
+	Draw(r);
+}
+
+/*
+ * Calls the DrawGraph function to draw the list of bases as long as they are all valid
+ */ 
+function Draw(r)
+{
+	if(document.getElementById("TickInterval").value > 0)
+	{
+		if(IsValid(r))
+		{
+			speed = document.getElementById("TickInterval").value;
+			maxResetFrame = 30 / speed;
+			generateAnimation(r, function (x) {
+    		if (x === null || x.valid === false) { return; }
+    		setupAnimation(x.id);
+  			});
+		}
+		else if(r.length == 0)
+		{
+			ClearCanvas();
+		}
+		else
+		{
+			ClearCanvas();
+			window.alert("Error, input string must contain only A, U, G, and C");
+		}
+	}
+	else
+	{
+		ClearCanvas();
+		window.alert("Error, speed must be greater than 0");
+	}
+}
+
+/*
+ * Checks if the entered letter actually represents a valid RNA base
+ */
+function IsValid(r)
+{
+	r = r.toUpperCase();
+	var isValid = true;
+	if(r != "")
+	{
+		for(i = 0; i < r.length; i++)
+		{
+			var x = r[i];
+			if(x != "A" && x != "U" && x != "C" && x != "G")
+			{
+				isValid = false
+				break;
+			}
+		}
+	}
+	else
+	{
+		isValid = false;
+	}
+	return isValid;
+}
+
+//This will animate the graph
+function AnimateGraph() {
+    // Whatever you want to do after the wait
+    //Should probably clean this up somehow, its fairly redundant
+    //This part handles if the animation object only has 1 frame
+    if(animObj != null && animObj.animation.length == currentFrame + 1)
+    {
+    	if(resetFrame < maxResetFrame && currentFrame <= animObj.animation.length)
+		{
+			ClearCanvas();
+			var str = animObj.baseString;
+			var inner = animObj.animation[currentFrame].points;
+			var bonds = animObj.animation[currentFrame].bonds;
+			//Draw the bonded lines
+			DrawBondedLines(bonds, inner, null);
+			for(j = 0; j < inner.length; j++)
+			{
+				//Draw all the line
+				if(j < inner.length - 1)
+				{
+					context.beginPath();
+					context.lineWidth = 2;
+					context.strokeStyle = 'black';
+					context.moveTo((inner[j].x * scale), inner[j].y * scale);
+  					context.lineTo((inner[j+1].x * scale), inner[j+1].y * scale);
+  					context.stroke();
+  				}
+
+  				//Draw the circle
+				context.beginPath();
+				context.lineWidth = 1;
+				context.arc((inner[j].x * scale), inner[j].y * scale, 10, 0, 2 * Math.PI);
+				context.stroke();
+				switch(str[j])
+				{
+					case "A":
+						context.fillStyle = "red";
+						break;
+				
+					case "U":
+						context.fillStyle = "orange";
+						break;
+
+					case "G":
+						context.fillStyle = "green";
+						break;	
+
+					case "C":
+						context.fillStyle = "blue";
+						break;
+
+					default:
+						context.fillStyle = "black";
+						break;
+				}
+				context.fill();
+			}
+			resetFrame++;
+		}
+		else
+		{
+			resetFrame = 0;
+			currentFrame++;
+		}
+    }
+    //This part handles if the animation object has more than 1 frame
+    else if(animObj != null && currentFrame < animObj.animation.length)
+    {
+    	if(resetFrame == maxResetFrame)
+    	{
+    		currentFrame++;
+    	}
+    	var str = animObj.baseString;
+		var inner = animObj.animation[currentFrame].points;
+		var bonds = animObj.animation[currentFrame].bonds;
+		//This makes the animation look smooth
+		if(resetFrame < maxResetFrame && currentFrame < animObj.animation.length - 1)
+		{
+			ClearCanvas();
+			var nextInner = animObj.animation[currentFrame + 1].points;
+			//Animate bonds here
+			//Animate everything else
+			DrawBondedLines(bonds, inner, nextInner);
+			for(j = 0; j < inner.length; j++)
+			{
+				var xDiff1 = ((inner[j].x * scale) - (nextInner[j].x * scale))/maxResetFrame;
+				var yDiff1 = ((inner[j].y * scale) - (nextInner[j].y * scale))/maxResetFrame;
+				var xDiff2;
+				var yDiff2;
+				if(nextInner[j+1] != null)
+				{
+					xDiff2 = ((inner[j+1].x * scale) - (nextInner[j+1].x * scale))/maxResetFrame;
+					yDiff2 = ((inner[j+1].y * scale) - (nextInner[j+1].y * scale))/maxResetFrame;
+				}
+				//Draw all the line before the circles
+				if(j < inner.length - 1)
+				{
+					context.beginPath();
+					context.lineWidth = 2;
+					context.strokeStyle = 'black';
+					context.moveTo((inner[j].x * scale) - (resetFrame * xDiff1), inner[j].y * scale - (resetFrame * yDiff1));
+  					context.lineTo((inner[j+1].x * scale) - (resetFrame * xDiff2), inner[j+1].y * scale - (resetFrame * yDiff2));
+  					context.stroke();
+  				}
+
+				context.beginPath();
+				context.lineWidth = 1;
+				context.arc((inner[j].x * scale) - (resetFrame * xDiff1), inner[j].y * scale - (resetFrame * yDiff1), 10, 0, 2 * Math.PI);
+				context.stroke();
+				switch(str[j])
+				{
+					case "A":
+						context.fillStyle = "red";
+						break;
+				
+					case "U":
+						context.fillStyle = "orange";
+						break;
+
+					case "G":
+						context.fillStyle = "green";
+						break;	
+
+					case "C":
+						context.fillStyle = "blue";
+						break;
+
+					default:
+						context.fillStyle = "black";
+						break;
+				}
+				context.fill();
+			}
+			resetFrame++;
+		}
+		else
+		{
+			resetFrame = 0;
+		}
+	}
+}
+
+function DrawBondedLines(bonds, inner, nextInner)
+{
+	//Function for only 1 frame
+	if(nextInner == null)
+	{
+		for(i = 0; i < bonds.length; i++)
+  		{
+  			context.beginPath();
+			context.lineWidth = 2;
+			context.setLineDash([dashLength, dashSpace]);
+			context.strokeStyle = 'black';
+			context.moveTo((inner[bonds[i].left].x * scale), inner[bonds[i].left].y * scale);
+  			context.lineTo((inner[bonds[i].right].x * scale), inner[bonds[i].right].y * scale);
+  			context.stroke();
+  			//Removed the dashes for the rest of the stuff
+  			context.setLineDash([0, 0]);
+  		}
+  	}
+  	
+  	//Function for more than 1 frame
+  	else
+  	{
+  		for(i = 0; i < bonds.length; i++)
+  		{
+  			var xDiffL1 = ((inner[bonds[i].left].x * scale) - (nextInner[bonds[i].left].x * scale))/maxResetFrame;
+  			var xDiffR1 = ((inner[bonds[i].right].x * scale) - (nextInner[bonds[i].right].x * scale))/maxResetFrame;
+			var yDiffL1 = ((inner[bonds[i].left].y * scale) - (nextInner[bonds[i].left].y * scale))/maxResetFrame;
+			var yDiffR1 = ((inner[bonds[i].right].y * scale) - (nextInner[bonds[i].right].y * scale))/maxResetFrame;
+
+			var xDiff1 = xDiffL1 - xDiffR1;
+			var yDiff1 = yDiffL1 - yDiffR1;
+
+  			context.beginPath();
+			context.lineWidth = 2;
+			context.setLineDash([dashLength, dashSpace]);
+			context.strokeStyle = 'black';
+			context.moveTo((inner[bonds[i].left].x * scale) - (resetFrame * xDiffL1), inner[bonds[i].left].y * scale - (resetFrame * yDiffL1));
+  			context.lineTo((inner[bonds[i].right].x * scale) - (resetFrame * xDiffR1), inner[bonds[i].right].y * scale - (resetFrame * yDiffR1));
+  			context.stroke();
+  			//Removed the dashes for the rest of the stuff
+  			context.setLineDash([0, 0]);
+  		}
+  	}
+}
+
+function ClearCanvas()
+{
+	context.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function fetchJSON(requestMethod, uri, body, cb)
+{
+	var hr = new XMLHttpRequest();
+	hr.open(requestMethod, uri);
+	hr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	hr.onreadystatechange = function() {
+		if (hr.readyState === XMLHttpRequest.DONE) {
+			if (hr.status === 200) {
+				cb(JSON.parse(hr.response));
+			} else { cb(null); }
+		}
+	}
+	hr.send(body);
+}
+
+/* Sends generation request with baseString, returns request object (or null)
+ * to supplied function. */
+/* generation object has { id: num; } */
+function generateAnimation(baseString, cb)
+{
+	fetchJSON('POST', '/gen', "baseString=" + baseString, cb);
+}
+
+/* Sends get animation request with id, returns request object (or null)
+ * to supplied function. */
+function getAnimation(id, cb)
+{
+	fetchJSON('GET', '/animation/' + id, null, cb);
+}
+
+function setupAnimation(id)
+{
+	getAnimation(id, function(ao)
+	{
+		if(document.getElementById("TickInterval").value > 0)
+		{
+			speed = document.getElementById("TickInterval").value;
+			maxResetFrame = 30 / speed;
+		}
+		else
+		{
+			maxResetFrame = 30;
+		}
+		fitToWindow(ao, 600, 450, 50, 50);
+		currentFrame = 0;
+		resetFrame = 0;
+		animObj = ao;
+	});
+}
+
+/* Port of FitToWindow from original project. Rather than fitting perfectly
+ * to one frame, fit to the final frame with a generous border. */
+function fitToWindow(animObj, windowWidth, windowHeight, borderWidth, borderHeight)
+{
+	var i, j;
+	var scale;
+	var a = animObj.animation;
+	var aLast = a[a.length-1].points;
+	var maxX = aLast[0].x;
+	var maxY = aLast[0].y;
+	var minX = aLast[0].x;
+	var minY = aLast[0].y;
+	for (i = 0; i < aLast.length; i++)
+	{
+		if (aLast[i].x < minX) { minX = aLast[i].x; }
+		if (aLast[i].x > maxX) { maxX = aLast[i].x; }
+		if (aLast[i].y < minY) { minY = aLast[i].y; }
+		if (aLast[i].y > maxY) { maxY = aLast[i].y; }
+	}
+	var rangeMinMaxX = maxX - minX;
+	var rangeMinMaxY = maxY - minY;
+	var biggestRange = Math.max(rangeMinMaxX, rangeMinMaxY);
+
+	if (windowWidth/windowHeight > rangeMinMaxX/rangeMinMaxY) 
+	{ 
+		scale = windowHeight;
+	}
+	else
+	{
+		scale = windowWidth;
+	}
+
+	for (i = 0; i < a.length; i++)
+	{
+		for (j = 0; j < a[i].points.length; j++)
+		{
+			a[i].points[j].x = (a[i].points[j].x - minX) / biggestRange * scale + borderWidth;
+			a[i].points[j].y = (a[i].points[j].y - minY) / biggestRange * scale + borderHeight;
+		}
+	}
+}
+
+setInterval(AnimateGraph, tickInterval);
+
+</script>
+</body>
+</html>
